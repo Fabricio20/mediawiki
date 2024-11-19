@@ -1,0 +1,11 @@
+services:
+  mediawiki:
+    image: notfab/mediawiki
+    restart: always
+    build: ./mediawiki
+    ports:
+      - 6888:80
+    volumes:
+      - ./images:/var/www/html/images
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./data:/var/www/data
